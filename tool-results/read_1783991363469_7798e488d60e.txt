@@ -1,0 +1,492 @@
+     1→  1550→                <p class="overline" style="margin-bottom:16px">Brand Colors</p>
+     2→  1551→                <div id="brand-swatches"
+     3→  1552→                    style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;margin-bottom:48px">
+     4→  1553→                </div>
+     5→  1554→                <p class="overline" style="margin-bottom:16px">Semantic Colors</p>
+     6→  1555→                <div id="semantic-swatches"
+     7→  1556→                    style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;margin-bottom:48px">
+     8→  1557→                </div>
+     9→  1558→                <p class="overline" style="margin-bottom:16px">Theme Tokens (Light / Dark)</p>
+    10→  1559→                <div id="theme-swatches"
+    11→  1560→                    style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px"></div>
+    12→  1561→            </div>
+    13→  1562→            <div id="sec-typography" style="margin-bottom:80px">
+    14→  1563→                <h3 class="h3-d" style="margin-bottom:24px">Typography</h3>
+    15→  1564→                <div
+    16→  1565→                    style="border-left:2px solid var(--border);padding-left:28px;display:flex;flex-direction:column;gap:40px">
+    17→  1566→                    <div>
+    18→  1567→                        <p class="caption" style="margin-bottom:6px">Display H1 — Newsreader 600, clamp(36-56px)</p>
+    19→  1568→                        <p class="h1-d">The Editorial Voice</p>
+    20→  1569→                    </div>
+    21→  1570→                    <div>
+    22→  1571→                        <p class="caption" style="margin-bottom:6px">Display H2 — Newsreader 600, clamp(28-40px)</p>
+    23→  1572→                        <p class="h2-d">Structural Hierarchy</p>
+    24→  1573→                    </div>
+    25→  1574→                    <div>
+    26→  1575→                        <p class="caption" style="margin-bottom:6px">Display H3 — Newsreader 500, clamp(22-28px)</p>
+    27→  1576→                        <p class="h3-d">Warmth in Every Detail</p>
+    28→  1577→                    </div>
+    29→  1578→                    <div>
+    30→  1579→                        <p class="caption" style="margin-bottom:6px">Heading 4 — Newsreader 600, 20px</p>
+    31→  1580→                        <p class="h4">Section Lead</p>
+    32→  1581→                    </div>
+    33→  1582→                    <div>
+    34→  1583→                        <p class="caption" style="margin-bottom:6px">Body Large — Outfit 400, 18px</p>
+    35→  1584→                        <p class="body-lg">Notaflow brings editorial sophistication to functional interfaces.</p>
+    36→  1585→                    </div>
+    37→  1586→                    <div>
+    38→  1587→                        <p class="caption" style="margin-bottom:6px">Body — Outfit 400, 16px</p>
+    39→  1588→                        <p class="body">Every token is designed to feel intentional and refined.</p>
+    40→  1589→                    </div>
+    41→  1590→                    <div>
+    42→  1591→                        <p class="caption" style="margin-bottom:6px">Caption — Outfit 400, 12px</p>
+    43→  1592→                        <p class="caption">Labels, timestamps, and metadata</p>
+    44→  1593→                    </div>
+    45→  1594→                    <div>
+    46→  1595→                        <p class="caption" style="margin-bottom:6px">Overline — Outfit 600, 12px, uppercase, 0.08em</p>
+    47→  1596→                        <p class="overline">Section Category</p>
+    48→  1597→                    </div>
+    49→  1598→                </div>
+    50→  1599→            </div>
+    51→  1600→            <div id="sec-iconography" style="margin-bottom:80px">
+    52→  1601→                <h3 class="h3-d" style="margin-bottom:24px">Iconography</h3>
+    53→  1602→                <p class="body-sm" style="color:var(--muted-foreground);margin-bottom:20px">Lucide icons — 2px stroke.
+    54→  1603→                    Click to copy name.</p>
+    55→  1604→                <div class="search-bar" style="max-width:320px;margin-bottom:16px"><svg
+    56→  1605→                        xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+    57→  1606→                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    58→  1607→                        <circle cx="11" cy="11" r="8" />
+    59→  1608→                        <path d="m21 21-4.3-4.3" />
+    60→  1609→                    </svg><input type="text" placeholder="Filter icons..." id="icon-search" aria-label="Filter icons">
+    61→  1610→                </div>
+    62→  1611→                <div class="icon-grid" id="icon-grid"></div>
+    63→  1612→            </div>
+    64→  1613→            <div id="sec-spacing" style="margin-bottom:32px">
+    65→  1614→                <h3 class="h3-d" style="margin-bottom:24px">Spacing &amp; Radius</h3>
+    66→  1615→                <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
+    67→  1616→                    <div>
+    68→  1617→                        <p class="overline" style="margin-bottom:16px">Spacing Scale (4px base)</p>
+    69→  1618→                        <div id="spacing-scale" style="display:flex;flex-direction:column;gap:12px"></div>
+    70→  1619→                    </div>
+    71→  1620→                    <div>
+    72→  1621→                        <p class="overline" style="margin-bottom:16px">Radius Scale</p>
+    73→  1622→                        <div id="radius-scale" style="display:grid;grid-template-columns:1fr 1fr;gap:12px"></div>
+    74→  1623→                    </div>
+    75→  1624→                </div>
+    76→  1625→            </div>
+    77→  1626→        </section>
+    78→  1627→
+    79→  1628→        <section id="components" class="section-sep" style="padding:80px 0 64px">
+    80→  1629→            <div style="margin-bottom:48px">
+    81→  1630→                <p class="overline" style="margin-bottom:8px">Part 02</p>
+    82→  1631→                <h2 class="h2-d">Components</h2>
+    83→  1632→            </div>
+    84→  1633→
+    85→  1634→            <div style="margin-bottom:80px">
+    86→  1635→                <h3 class="h3-d" style="margin-bottom:24px">Button</h3>
+    87→  1636→                <p class="overline" style="margin-bottom:12px">Variants</p>
+    88→  1637→                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:32px"><button
+    89→  1638→                        class="btn btn-brand">Brand</button><button class="btn btn-secondary">Secondary</button><button
+    90→  1639→                        class="btn btn-outline">Outline</button><button class="btn btn-ghost">Ghost</button><button
+    91→  1640→                        class="btn btn-link">Link</button><button class="btn btn-danger">Danger</button></div>
+    92→  1641→                <p class="overline" style="margin-bottom:12px">Sizes</p>
+    93→  1642→                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:32px"><button
+    94→  1643→                        class="btn btn-brand btn-sm">Small</button><button class="btn btn-brand">Default</button><button
+    95→  1644→                        class="btn btn-brand btn-lg">Large</button></div>
+    96→  1645→                <p class="overline" style="margin-bottom:12px">Brand Presentation — buttons on brand surface</p>
+    97→  1646→                <div class="noise-bg"
+    98→  1647→                    style="background:var(--wine);border-radius:var(--radius-lg);padding:32px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:32px">
+    99→  1648→                    <span
+   100→  1649→                        style="font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:24px;color:#fff;margin-right:auto">Notaflow<span
+   101→  1650→                            style="color:var(--dust)">.</span></span>
+   102→  1651→                    <button class="btn btn-inverted">Get Started</button>
+   103→  1652→                    <button class="btn btn-on-brand">Learn More</button>
+   104→  1653→                </div>
+   105→  1654→                <p class="overline" style="margin-bottom:12px">Loading</p>
+   106→  1655→                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:32px"><button
+   107→  1656→                        class="btn btn-brand loading" disabled>Exporting<span
+   108→  1657→                            class="btn-spinner"></span></button><button class="btn btn-outline loading"
+   109→  1658→                        disabled>Loading<span class="btn-spinner"></span></button><button class="btn btn-danger loading"
+   110→  1659→                        disabled>Deleting<span class="btn-spinner"></span></button></div>
+   111→  1660→                <p class="overline" style="margin-bottom:12px">Disabled</p>
+   112→  1661→                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px"><button class="btn btn-brand"
+   113→  1662→                        disabled>Brand</button><button class="btn btn-secondary" disabled>Secondary</button><button
+   114→  1663→                        class="btn btn-outline" disabled>Outline</button></div>
+   115→  1664→            </div>
+   116→  1665→
+   117→  1666→            <div style="margin-bottom:80px">
+   118→  1667→                <h3 class="h3-d" style="margin-bottom:24px">Badge</h3>
+   119→  1668→                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px"><span
+   120→  1669→                        class="badge badge-neutral">Draft</span><span class="badge badge-success">Published</span><span
+   121→  1670→                        class="badge badge-warning">Pending</span><span class="badge badge-danger">Expired</span></div>
+   122→  1671→            </div>
+   123→  1672→
+   124→  1673→            <div style="margin-bottom:80px">
+   125→  1674→                <h3 class="h3-d" style="margin-bottom:24px">Card</h3>
+   126→  1675→                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">
+   127→  1676→                    <div class="nf-card">
+   128→  1677→                        <h4 class="h4" style="margin-bottom:8px">Default</h4>
+   129→  1678→                        <p class="body-sm" style="color:var(--muted-foreground)">Standard card with border.</p>
+   130→  1679→                    </div>
+   131→  1680→                    <div class="nf-card nf-card-accent-top">
+   132→  1681→                        <p class="overline" style="margin-bottom:8px">Featured</p>
+   133→  1682→                        <h4 class="h4" style="margin-bottom:8px">Accent Top</h4>
+   134→  1683→                        <p class="body-sm" style="color:var(--muted-foreground)">Primary top border.</p>
+   135→  1684→                    </div>
+   136→  1685→                    <div class="nf-card nf-card-accent-left">
+   137→  1686→                        <p class="overline" style="margin-bottom:8px">Sidebar</p>
+   138→  1687→                        <h4 class="h4" style="margin-bottom:8px">Accent Left</h4>
+   139→  1688→                        <p class="body-sm" style="color:var(--muted-foreground)">Left accent variant.</p>
+   140→  1689→                    </div>
+   141→  1690→                    <div class="nf-card nf-card-brand">
+   142→  1691→                        <p class="overline" style="margin-bottom:8px;color:rgba(255,255,255,.7)">On Brand</p>
+   143→  1692→                        <h4 class="h4" style="margin-bottom:8px;color:#fff">Brand Surface</h4>
+   144→  1693→                        <p class="caption">Inverted card on Dark Wine.</p>
+   145→  1694→                    </div>
+   146→  1695→                    <div class="nf-card" style="display:flex;flex-direction:column;gap:12px">
+   147→  1696→                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+   148→  1697→                            <h4 class="h4">Akta Jual Beli</h4><span class="badge badge-warning">Pending</span>
+   149→  1698→                        </div>
+   150→  1699→                        <p class="body-sm" style="color:var(--muted-foreground)">Complete card — header, status badge,
+   151→  1700→                            body, and footer actions.</p>
+   152→  1701→                        <div style="display:flex;gap:8px;margin-top:4px"><button
+   153→  1702→                                class="btn btn-brand btn-sm">Open</button><button
+   154→  1703→                                class="btn btn-ghost btn-sm">Archive</button></div>
+   155→  1704→                    </div>
+   156→  1705→                    <div class="nf-card" style="display:flex;flex-direction:column;gap:12px">
+   157→  1706→                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+   158→  1707→                            <h4 class="h4">Akta Pendirian PT</h4><span class="badge badge-success">Published</span>
+   159→  1708→                        </div>
+   160→  1709→                        <p class="body-sm" style="color:var(--muted-foreground)">Card with metadata footer for document
+   161→  1710→                            listings.</p>
+   162→  1711→                        <p class="caption" style="margin-top:4px">Updated 2 hours ago · Pihak: 3</p>
+   163→  1712→                    </div>
+   164→  1713→                </div>
+   165→  1714→            </div>
+   166→  1715→
+   167→  1716→            <div style="margin-bottom:80px">
+   168→  1717→                <h3 class="h3-d" style="margin-bottom:24px">Checkbox</h3>
+   169→  1718→                <div style="display:flex;flex-direction:column;gap:18px;max-width:420px">
+   170→  1719→                    <label class="nf-checkbox"><input type="checkbox" checked><span class="nf-checkbox-box"><svg
+   171→  1720→                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+   172→  1721→                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+   173→  1722→                                <path d="M20 6 9 17l-5-5" />
+   174→  1723→                            </svg></span><span style="display:flex;flex-direction:column"><span
+   175→  1724→                                class="nf-checkbox-label">Checked</span></span></label>
+   176→  1725→                    <label class="nf-checkbox"><input type="checkbox"><span class="nf-checkbox-box"><svg
+   177→  1726→                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+   178→  1727→                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+   179→  1728→                                <path d="M20 6 9 17l-5-5" />
+   180→  1729→                            </svg></span><span style="display:flex;flex-direction:column"><span
+   181→  1730→                                class="nf-checkbox-label">Unchecked</span></span></label>
+   182→  1731→                    <label class="nf-checkbox"><input type="checkbox" checked><span class="nf-checkbox-box"><svg
+   183→  1732→                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+   184→  1733→                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+   185→  1734→                                <path d="M20 6 9 17l-5-5" />
+   186→  1735→                            </svg></span><span style="display:flex;flex-direction:column"><span
+   187→  1736→                                class="nf-checkbox-label">With description</span><span class="nf-checkbox-desc">Send a
+   188→  1737→                                notification when the deed status changes.</span></span></label>
+   189→  1738→                    <label class="nf-checkbox disabled"><input type="checkbox" disabled><span
+   190→  1739→                            class="nf-checkbox-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+   191→  1740→                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+   192→  1741→                                stroke-linejoin="round">
+   193→  1742→                                <path d="M20 6 9 17l-5-5" />
+   194→  1743→                            </svg></span><span style="display:flex;flex-direction:column"><span
+   195→  1744→                                class="nf-checkbox-label">Disabled</span></span></label>
+   196→  1745→                </div>
+   197→  1746→            </div>
+   198→  1747→
+   199→  1748→            <div style="margin-bottom:80px">
+   200→  1749→                <h3 class="h3-d" style="margin-bottom:24px">Form Field</h3>
+   201→  1750→                <div
+   202→  1751→                    style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;max-width:640px">
+   203→  1752→                    <div class="form-field"><label class="form-label">Full Name</label><input class="form-input"
+   204→  1753→                            type="text" placeholder="Enter your name"><span class="form-helper">As it appears on your
+   205→  1754→                            invoice.</span></div>
+   206→  1755→                    <div class="form-field"><label class="form-label">Email</label>
+   207→  1756→                        <div style="position:relative"><input class="form-input form-input-success" type="email"
+   208→  1757→                                value="hello@notaflow.com" style="padding-right:36px"><svg
+   209→  1758→                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+   210→  1759→                                fill="none" stroke="var(--success)" stroke-width="2"
+   211→  1760→                                style="position:absolute;right:12px;top:50%;transform:translateY(-50%)">
+   212→  1761→                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+   213→  1762→                                <path d="m9 11 3 3L22 4" />
+   214→  1763→                            </svg></div><span class="form-helper form-helper-success">Email verified</span>
+   215→  1764→                    </div>
+   216→  1765→                    <div class="form-field"><label class="form-label">Password</label>
+   217→  1766→                        <div style="position:relative"><input class="form-input form-input-error" type="password"
+   218→  1767→                                value="123" style="padding-right:36px"><svg xmlns="http://www.w3.org/2000/svg"
+   219→  1768→                                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--danger)"
+   220→  1769→                                stroke-width="2"
+   221→  1770→                                style="position:absolute;right:12px;top:50%;transform:translateY(-50%)">
+   222→  1771→                                <circle cx="12" cy="12" r="10" />
+   223→  1772→                                <line x1="12" y1="8" x2="12" y2="12" />
+   224→  1773→                                <line x1="12" y1="16" x2="12.01" y2="16" />
+   225→  1774→                            </svg></div><span class="form-helper form-helper-error">Must be at least 8 characters</span>
+   226→  1775→                    </div>
+   227→  1776→                </div>
+   228→  1777→            </div>
+   229→  1778→
+   230→  1779→            <div style="margin-bottom:80px">
+   231→  1780→                <h3 class="h3-d" style="margin-bottom:24px">Stat Card</h3>
+   232→  1781→                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px">
+   233→  1782→                    <div class="stat-card"><span class="stat-label">Revenue</span><span
+   234→  1783→                            class="stat-value">$48.2k</span><span class="stat-trend stat-trend-up">+12.5%</span></div>
+   235→  1784→                    <div class="stat-card"><span class="stat-label">Invoices</span><span
+   236→  1785→                            class="stat-value">1,284</span><span class="stat-trend stat-trend-up">+8.1%</span></div>
+   237→  1786→                    <div class="stat-card"><span class="stat-label">Overdue</span><span
+   238→  1787→                            class="stat-value">23</span><span class="stat-trend stat-trend-down">-3.2%</span></div>
+   239→  1788→                </div>
+   240→  1789→            </div>
+   241→  1790→
+   242→  1791→            <div style="margin-bottom:80px">
+   243→  1792→                <h3 class="h3-d" style="margin-bottom:24px">Alert</h3>
+   244→  1793→                <div style="display:flex;flex-direction:column;gap:16px;max-width:560px">
+   245→  1794→                    <div class="nf-alert nf-alert-success"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+   246→  1795→                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+   247→  1796→                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+   248→  1797→                            <path d="m9 11 3 3L22 4" />
+   249→  1798→                        </svg>
+   250→  1799→                        <div>
+   251→  1800→                            <p class="alert-title">Invoice Sent</p>
+   252→  1801→                            <p class="caption">Your invoice #1042 has been sent successfully.</p>
+   253→  1802→                        </div>
+   254→  1803→                    </div>
+   255→  1804→                    <div class="nf-alert nf-alert-warning"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+   256→  1805→                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+   257→  1806→                            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+   258→  1807→                            <path d="M12 9v4" />
+   259→  1808→                            <path d="M12 17h.01" />
+   260→  1809→                        </svg>
+   261→  1810→                        <div>
+   262→  1811→                            <p class="alert-title">Payment Pending</p>
+   263→  1812→                            <p class="caption">Invoice #1038 is overdue by 5 days.</p>
+   264→  1813→                        </div>
+   265→  1814→                    </div>
+   266→  1815→                    <div class="nf-alert nf-alert-danger"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+   267→  1816→                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+   268→  1817→                            <circle cx="12" cy="12" r="10" />
+   269→  1818→                            <line x1="12" y1="8" x2="12" y2="12" />
+   270→  1819→                            <line x1="12" y1="16" x2="12.01" y2="16" />
+   271→  1820→                        </svg>
+   272→  1821→                        <div>
+   273→  1822→                            <p class="alert-title">Action Required</p>
+   274→  1823→                            <p class="caption">Your subscription has expired.</p>
+   275→  1824→                        </div>
+   276→  1825→                    </div>
+   277→  1826→                </div>
+   278→  1827→            </div>
+   279→  1828→
+   280→  1829→            <div style="margin-bottom:32px">
+   281→  1830→                <h3 class="h3-d" style="margin-bottom:24px">Theme Toggle</h3>
+   282→  1831→                <div class="nf-card" style="display:flex;align-items:center;gap:16px;max-width:400px">
+   283→  1832→                    <div class="theme-toggle" id="demo-theme-toggle" role="switch" aria-label="Demo toggle"
+   284→  1833→                        tabindex="0">
+   285→  1834→                        <div class="theme-toggle-knob"><svg class="toggle-sun" xmlns="http://www.w3.org/2000/svg"
+   286→  1835→                                width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+   287→  1836→                                stroke-width="2.5">
+   288→  1837→                                <circle cx="12" cy="12" r="4" />
+   289→  1838→                                <path
+   290→  1839→                                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+   291→  1840→                            </svg><svg class="toggle-moon" xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+   292→  1841→                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+   293→  1842→                                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+   294→  1843→                            </svg></div>
+   295→  1844→                    </div>
+   296→  1845→                    <div>
+   297→  1846→                        <p class="body-sm" style="font-weight:500">Switch Appearance</p>
+   298→  1847→                        <p class="caption">Toggle between light and dark mode</p>
+   299→  1848→                    </div>
+   300→  1849→                </div>
+   301→  1850→            </div>
+   302→  1851→        </section>
+   303→  1852→
+   304→  1853→        <section id="token-map" class="section-sep" style="padding:80px 0 64px">
+   305→  1854→            <div style="margin-bottom:48px">
+   306→  1855→                <p class="overline" style="margin-bottom:8px">Part 03</p>
+   307→  1856→                <h2 class="h2-d">Token Map</h2>
+   308→  1857→                <p class="body" style="color:var(--muted-foreground);max-width:600px;margin-top:8px">Complete visual
+   309→  1858→                    representation of every token that gets exported. Click any row to copy its token path. Groups are
+   310→  1859→                    collapsible.</p>
+   311→  1860→                <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px">
+   312→  1861→                    <div class="nf-card" style="padding:16px 20px;display:flex;align-items:center;gap:12px">
+   313→  1862→                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+   314→  1863→                            stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+   315→  1864→                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+   316→  1865→                            <polyline points="14 2 14 8 20 8" />
+   317→  1866→                        </svg>
+   318→  1867→                        <div>
+   319→  1868→                            <p class="body-sm" style="font-weight:600">Export Bundle</p>
+   320→  1869→                            <p class="caption">notaflow-tokens.json + theme.css + fonts.css</p>
+   321→  1870→                        </div>
+   322→  1871→                    </div>
+   323→  1872→                    <div class="nf-card" style="padding:16px 20px;display:flex;align-items:center;gap:12px">
+   324→  1873→                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+   325→  1874→                            stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+   326→  1875→                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+   327→  1876→                            <polyline points="7 10 12 15 17 10" />
+   328→  1877→                            <line x1="12" y1="15" x2="12" y2="3" />
+   329→  1878→                        </svg>
+   330→  1879→                        <div>
+   331→  1880→                            <p class="body-sm" style="font-weight:600">Download Source</p>
+   332→  1881→                            <p class="caption">Full React + TS + CSS project ZIP</p>
+   333→  1882→                        </div>
+   334→  1883→                    </div>
+   335→  1884→                </div>
+   336→  1885→            </div>
+   337→  1886→            <div class="token-map" id="token-map-container"></div>
+   338→  1887→        </section>
+   339→  1888→
+   340→  1889→    </main>
+   341→  1890→    <footer style="border-top:1px solid var(--border);padding:40px 24px;text-align:center">
+   342→  1891→        <p class="caption">Notaflow Design System v1.1</p>
+   343→  1892→    </footer>
+   344→  1893→
+   345→  1894→    <script>
+   346→  1895→            (function () {
+   347→  1896→                'use strict';
+   348→  1897→
+   349→  1898→                var brandColors = [
+   350→  1899→                    { name: 'wine', label: 'Primary (Dark Wine)', light: '#7f2924', dark: '#7f2924', cat: 'Brand' },
+   351→  1900→                    { name: 'ashBrown', label: 'Secondary (Ash Brown)', light: '#665345', dark: '#665345', cat: 'Brand' },
+   352→  1901→                    { name: 'taupe', label: 'Neutral (Taupe)', light: '#9b8d89', dark: '#9b8d89', cat: 'Brand' },
+   353→  1902→                    { name: 'dustGrey', label: 'Border (Dust Grey)', light: '#d5ccca', dark: '#d5ccca', cat: 'Brand' },
+   354→  1903→                    { name: 'carbonBlack', label: 'Text (Carbon Black)', light: '#2b2621', dark: '#2b2621', cat: 'Brand' }
+   355→  1904→                ];
+   356→  1905→                var semanticColors = [
+   357→  1906→                    { name: 'success', label: 'Success (Sage)', light: '#4a6b4f', dark: '#4a6b4f', cat: 'Semantic' },
+   358→  1907→                    { name: 'warning', label: 'Warning (Amber)', light: '#c78122', dark: '#c78122', cat: 'Semantic' },
+   359→  1908→                    { name: 'danger', label: 'Danger (Brick)', light: '#b83737', dark: '#b83737', cat: 'Semantic' }
+   360→  1909→                ];
+   361→  1910→                var themeTokens = [
+   362→  1911→                    { name: 'background', light: '#F8F7F6', dark: '#161311', cat: 'Theme' },
+   363→  1912→                    { name: 'card', light: '#FFFFFF', dark: '#1E1A18', cat: 'Theme' },
+   364→  1913→                    { name: 'secondary', light: '#EEEBE9', dark: '#2B2623', cat: 'Theme' },
+   365→  1914→                    { name: 'muted', light: '#F2EFEF', dark: '#352F2B', cat: 'Theme' },
+   366→  1915→                    { name: 'foreground', light: '#2B2621', dark: '#F8F7F6', cat: 'Theme' },
+   367→  1916→                    { name: 'mutedForeground', light: '#5D5452', dark: '#B5A9A5', cat: 'Theme' },
+   368→  1917→                    { name: 'primary', light: '#7F2924', dark: '#D9655F', cat: 'Theme' },
+   369→  1918→                    { name: 'border', light: '#D5CCCA', dark: '#47403B', cat: 'Theme' }
+   370→  1919→                ];
+   371→  1920→                var spacingScale = [{ l: '1', v: '4px' }, { l: '2', v: '8px' }, { l: '3', v: '12px' }, { l: '4', v: '16px' }, { l: '5', v: '20px' }, { l: '6', v: '24px' }, { l: '8', v: '32px' }, { l: '10', v: '40px' }, { l: '12', v: '48px' }, { l: '16', v: '64px' }, { l: '20', v: '80px' }, { l: '24', v: '96px' }];
+   372→  1921→                var radiusScale = [{ l: 'xs', v: '2px' }, { l: 'sm', v: '4px' }, { l: 'md', v: '8px' }, { l: 'lg', v: '12px' }, { l: 'xl', v: '16px' }, { l: '2xl', v: '24px' }, { l: 'pill', v: '9999px' }];
+   373→  1922→                var shadowScale = {
+   374→  1923→                    light: [
+   375→  1924→                        { l: 'sm', v: '0 1px 2px rgba(43,38,33,.06)' },
+   376→  1925→                        { l: 'md', v: '0 4px 12px rgba(43,38,33,.08)' },
+   377→  1926→                        { l: 'lg', v: '0 8px 32px rgba(43,38,33,.1)' },
+   378→  1927→                        { l: 'xl', v: '0 16px 48px rgba(43,38,33,.14)' }
+   379→  1928→                    ],
+   380→  1929→                    dark: [
+   381→  1930→                        { l: 'sm', v: '0 1px 2px rgba(0,0,0,.25)' },
+   382→  1931→                        { l: 'md', v: '0 4px 12px rgba(0,0,0,.3)' },
+   383→  1932→                        { l: 'lg', v: '0 8px 32px rgba(0,0,0,.35)' },
+   384→  1933→                        { l: 'xl', v: '0 16px 48px rgba(0,0,0,.4)' }
+   385→  1934→                    ]
+   386→  1935→                };
+   387→  1936→                var iconSizes = [{ l: 'xs', v: '14px' }, { l: 'sm', v: '16px' }, { l: 'md', v: '20px' }, { l: 'lg', v: '24px' }, { l: 'xl', v: '32px' }];
+   388→  1937→                var iconNames = ['search', 'home', 'settings', 'user', 'mail', 'bell', 'calendar', 'clock', 'heart', 'star', 'bookmark', 'share-2', 'download', 'upload', 'edit-3', 'trash-2', 'plus', 'minus', 'check', 'x', 'chevron-left', 'chevron-right', 'chevron-up', 'chevron-down', 'arrow-left', 'arrow-right', 'arrow-up', 'arrow-down', 'eye', 'lock', 'unlock', 'shield', 'zap', 'globe', 'map-pin', 'camera', 'image', 'file-text', 'folder', 'copy', 'link', 'external-link', 'menu', 'more-horizontal', 'filter', 'refresh-cw', 'maximize-2', 'minimize-2', 'layout-grid', 'list', 'code-2', 'terminal', 'database', 'cloud', 'wifi', 'battery', 'power', 'volume-2', 'mic', 'headphones', 'play', 'pause', 'dollar-sign', 'trending-up', 'trending-down', 'pie-chart', 'bar-chart-3', 'activity', 'credit-card', 'receipt', 'send', 'paperclip', 'message-circle', 'phone', 'map', 'compass', 'sun', 'moon', 'flag', 'tag', 'hash', 'at-sign', 'aperture', 'palette', 'pen-tool', 'scissors', 'circle', 'square', 'triangle', 'award', 'gift', 'package', 'truck', 'store', 'building-2', 'landmark', 'briefcase', 'users', 'user-plus', 'log-in', 'log-out'];
+   389→  1938→
+   390→  1939→                var searchIndex = [];
+   391→  1940→                function buildSearchIndex() {
+   392→  1941→                    searchIndex = [];
+   393→  1942→                    var allC = brandColors.concat(semanticColors).concat(themeTokens);
+   394→  1943→                    allC.forEach(function (c) { var dk = document.documentElement.classList.contains('dark'); var hex = dk ? c.dark : c.light; searchIndex.push({ label: c.label || c.name, cat: c.cat, hex: hex, target: '#sec-colors', type: 'color' }); searchIndex.push({ label: hex.toUpperCase(), cat: c.cat, hex: hex, target: '#sec-colors', type: 'color' }) });
+   395→  1944→                    searchIndex.push({ label: 'Typography', cat: 'Foundations', target: '#sec-typography', type: 'section' });
+   396→  1945→                    searchIndex.push({ label: 'Iconography', cat: 'Foundations', target: '#sec-iconography', type: 'section' });
+   397→  1946→                    searchIndex.push({ label: 'Token Map', cat: 'Export', target: '#token-map', type: 'section' });
+   398→  1947→                    iconNames.forEach(function (n) { searchIndex.push({ label: n, cat: 'Icon', target: '#sec-iconography', type: 'icon' }) });
+   399→  1948→                }
+   400→  1949→
+   401→  1950→                var toastSVGs = { success: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>', error: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>', warning: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>', info: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>' };
+   402→  1951→                var closeSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
+   403→  1952→                function showToast(type, title, msg, duration) { duration = duration || 4000; var w = document.getElementById('toast-wrap'), t = document.createElement('div'); t.className = 'toast toast-' + type; t.innerHTML = '<span class="toast-icon">' + (toastSVGs[type] || toastSVGs.info) + '</span><div class="toast-body"><p class="toast-title">' + title + '</p><p class="toast-msg">' + msg + '</p></div><button class="toast-close" aria-label="Dismiss">' + closeSVG + '</button><div class="toast-progress" style="animation-duration:' + duration + 'ms"></div>'; t.querySelector('.toast-close').onclick = function () { dismissToast(t) }; w.appendChild(t); t._timeout = setTimeout(function () { dismissToast(t) }, duration) }
+   404→  1953→                function dismissToast(t) { if (!t || t._dismissed) return; t._dismissed = true; clearTimeout(t._timeout); t.classList.add('out'); setTimeout(function () { t.remove() }, 300) }
+   405→  1954→
+   406→  1955→                function copyText(text) { try { if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(function () { showToast('success', 'Copied', text, 2500) }).catch(function () { fallbackCopy(text) }) } else { fallbackCopy(text) } } catch (e) { showToast('error', 'Copy failed', 'Unexpected error.', 4000) } }
+   407→  1956→                function fallbackCopy(text) { var ta = document.createElement('textarea'); ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;left:-9999px'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); showToast('success', 'Copied', text, 2500) } catch (e) { showToast('error', 'Copy failed', 'Browser blocked copy.', 4000) } document.body.removeChild(ta) }
+   408→  1957→
+   409→  1958→                function hexLum(h) { var r = parseInt(h.slice(1, 3), 16), g = parseInt(h.slice(3, 5), 16), b = parseInt(h.slice(5, 7), 16); return (.299 * r + .587 * g + .114 * b) / 255 }
+   410→  1959→                function renderSwatch(c, container) { var dk = document.documentElement.classList.contains('dark'); var cur = dk ? c.dark : c.light, oth = dk ? c.light : c.dark, othLbl = dk ? 'Light' : 'Dark'; var insetBdr = hexLum(oth) > .55 ? 'rgba(0,0,0,.15)' : 'rgba(255,255,255,.35)'; var div = document.createElement('div'); div.className = 'color-swatch'; div.title = 'Click to copy ' + cur; div.onclick = (function (h) { return function () { copyText(h) } })(cur); div.innerHTML = '<div class="swatch-color" style="background:' + cur + '"><div class="swatch-inset" style="background:' + oth + ';border-color:' + insetBdr + '" title="' + othLbl + ': ' + oth + '"></div></div><div class="swatch-info"><p class="swatch-name">' + (c.label || c.name) + '</p><p class="swatch-hex">' + cur.toUpperCase() + '</p><p class="swatch-other">' + othLbl + ': ' + oth.toUpperCase() + '</p></div>'; container.appendChild(div) }
+   411→  1960→                function renderAllSwatches() { var bc = document.getElementById('brand-swatches'), sc = document.getElementById('semantic-swatches'), tc = document.getElementById('theme-swatches'); bc.innerHTML = ''; sc.innerHTML = ''; tc.innerHTML = ''; brandColors.forEach(function (c) { renderSwatch(c, bc) }); semanticColors.forEach(function (c) { renderSwatch(c, sc) }); themeTokens.forEach(function (c) { renderSwatch(c, tc) }) }
+   412→  1961→                function renderSpacing() { var c = document.getElementById('spacing-scale'); c.innerHTML = ''; spacingScale.forEach(function (s) { var r = document.createElement('div'); r.style.cssText = 'display:flex;align-items:center;gap:12px'; r.innerHTML = '<span style="font-family:monospace;font-size:12px;color:var(--muted-foreground);width:72px;flex-shrink:0">space-' + s.l + '</span><div style="height:20px;width:' + s.v + ';background:var(--primary);border-radius:var(--radius-sm);opacity:.35;min-width:4px"></div><span class="caption">' + s.v + '</span>'; c.appendChild(r) }) }
+   413→  1962→                function renderRadius() { var c = document.getElementById('radius-scale'); c.innerHTML = ''; radiusScale.forEach(function (r) { var d = document.createElement('div'); d.className = 'nf-card'; d.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px'; d.innerHTML = '<div style="width:48px;height:48px;border:2px solid var(--primary);border-radius:' + r.v + ';opacity:.5"></div><span style="font-family:monospace;font-size:11px;color:var(--muted-foreground)">radius-' + r.l + '</span><span class="caption">' + r.v + '</span>'; c.appendChild(d) }) }
+   414→  1963→
+   415→  1964→                function renderIcons() { var g = document.getElementById('icon-grid'); g.innerHTML = ''; iconNames.forEach(function (n) { var item = document.createElement('div'); item.className = 'icon-item'; item.setAttribute('data-icon-name', n); item.title = 'Click to copy: ' + n; item.innerHTML = '<i data-lucide="' + n + '"></i><span>' + n + '</span>'; (function (nm) { item.onclick = function () { copyText(nm) } })(n); g.appendChild(item) }); if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons({ attrs: { 'stroke-width': 2 } }) }
+   416→  1965→                var is = document.getElementById('icon-search'); if (is) is.addEventListener('input', function () { var q = this.value.toLowerCase().trim(); var items = document.querySelectorAll('#icon-grid .icon-item'); for (var i = 0; i < items.length; i++) { var nm = (items[i].getAttribute('data-icon-name') || '').toLowerCase(); items[i].classList.toggle('hidden', q.length > 0 && nm.indexOf(q) === -1) } });
+   417→  1966→
+   418→  1967→                function setupSearch(inputId, barId, dropdownId, clearId) { var input = document.getElementById(inputId), bar = document.getElementById(barId), dropdown = document.getElementById(dropdownId), clearBtn = document.getElementById(clearId); if (!input || !dropdown) return; var debounceTimer = null; input.addEventListener('input', function () { var q = this.value.trim(); bar.classList.toggle('has-query', q.length > 0); clearTimeout(debounceTimer); debounceTimer = setTimeout(function () { performSearch(q, dropdown) }, 150) }); input.addEventListener('focus', function () { if (this.value.trim().length > 0) dropdown.classList.add('open') }); if (clearBtn) clearBtn.addEventListener('click', function () { input.value = ''; bar.classList.remove('has-query'); dropdown.classList.remove('open'); input.focus() }); document.addEventListener('click', function (e) { if (!dropdown.contains(e.target) && e.target !== input) dropdown.classList.remove('open') }) }
+   419→  1968→                function performSearch(q, dropdown) { if (q.length < 1) { dropdown.classList.remove('open'); return } dropdown.innerHTML = ''; var ql = q.toLowerCase(); var results = searchIndex.filter(function (item) { return item.label.toLowerCase().indexOf(ql) !== -1 || (item.hex && item.hex.toLowerCase().indexOf(ql) !== -1) }).slice(0, 12); if (results.length === 0) { dropdown.innerHTML = '<div class="search-dropdown-empty">No results for "' + q.replace(/</g, '&lt;') + '"</div>'; dropdown.classList.add('open'); return } results.forEach(function (r) { var item = document.createElement('div'); item.className = 'search-dropdown-item'; item.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span class="sd-label">' + r.label + '</span><span class="sd-cat">' + r.cat + '</span>'; (function (result) { item.onclick = function () { if (result.type === 'color') copyText(result.hex || result.label); else if (result.type === 'icon') copyText(result.label); else if (result.target) { document.querySelector(result.target).scrollIntoView({ behavior: 'smooth' }); dropdown.classList.remove('open') } } })(r); dropdown.appendChild(item) }); dropdown.classList.add('open') }
+   420→  1969→
+   421→  1970→                function toggleTheme() { var dk = document.documentElement.classList.toggle('dark'); try { localStorage.setItem('notaflow-theme', dk ? 'dark' : 'light') } catch (e) { } renderAllSwatches(); buildSearchIndex(); renderTokenMap() }
+   422→  1971→                function initTheme() { var sv = null; try { sv = localStorage.getItem('notaflow-theme') } catch (e) { } var pd = window.matchMedia('(prefers-color-scheme:dark)').matches; if (sv === 'dark' || (!sv && pd)) document.documentElement.classList.add('dark'); else document.documentElement.classList.remove('dark') }
+   423→  1972→                var toggles = document.querySelectorAll('.theme-toggle'); for (var i = 0; i < toggles.length; i++) { toggles[i].addEventListener('click', toggleTheme); toggles[i].addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleTheme() } }) }
+   424→  1973→
+   425→  1974→                var navbar = document.getElementById('nf-navbar');
+   426→  1975→                function handleScroll() { if (!navbar) return; navbar.classList.toggle('scrolled', window.scrollY > 80); var secs = ['foundations', 'components', 'token-map'], act = ''; for (var i = 0; i < secs.length; i++) { var el = document.getElementById(secs[i]); if (el && el.getBoundingClientRect().top <= 130) act = secs[i] } var nls = document.querySelectorAll('.nav-link[data-nav]'); for (var j = 0; j < nls.length; j++)nls[j].classList.toggle('active', nls[j].getAttribute('data-nav') === act) }
+   427→  1976→                window.addEventListener('scroll', handleScroll, { passive: true });
+   428→  1977→
+   429→  1978→                var drawer = document.getElementById('mobile-drawer');
+   430→  1979→                function openDrawer() { if (!drawer) return; drawer.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden' }
+   431→  1980→                function closeDrawer() { if (!drawer) return; drawer.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); document.body.style.overflow = '' }
+   432→  1981→                var dOpen = document.getElementById('drawer-open'), dClose = document.getElementById('drawer-close'), dBg = document.getElementById('drawer-bg');
+   433→  1982→                if (dOpen) dOpen.addEventListener('click', openDrawer); if (dClose) dClose.addEventListener('click', closeDrawer); if (dBg) dBg.addEventListener('click', closeDrawer);
+   434→  1983→                document.querySelectorAll('.drawer-link').forEach(function (l) { l.addEventListener('click', closeDrawer) });
+   435→  1984→                document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDrawer() });
+   436→  1985→
+   437→  1986→                function renderTokenMap() {
+   438→  1987→                    var container = document.getElementById('token-map-container'); if (!container) return; container.innerHTML = '';
+   439→  1988→                    var dk = document.documentElement.classList.contains('dark');
+   440→  1989→                    var groups = [];
+   441→  1990→                    var brandRows = []; brandColors.forEach(function (c) { var hex = dk ? c.dark : c.light; brandRows.push({ key: 'color.brand.' + c.name, val: hex, isColor: true, hex: hex }) });
+   442→  1991→                    groups.push({ title: 'Color — Brand', count: brandRows.length, rows: brandRows });
+   443→  1992→                    var semRows = []; semanticColors.forEach(function (c) { var hex = dk ? c.dark : c.light; semRows.push({ key: 'color.semantic.' + c.name, val: hex, isColor: true, hex: hex }) });
+   444→  1993→                    groups.push({ title: 'Color — Semantic', count: semRows.length, rows: semRows });
+   445→  1994→                    var tlRows = []; themeTokens.forEach(function (c) { tlRows.push({ key: 'color.theme.light.' + c.name, val: c.light, isColor: true, hex: c.light }) });
+   446→  1995→                    groups.push({ title: 'Color — Theme Light', count: tlRows.length, rows: tlRows });
+   447→  1996→                    var tdRows = []; themeTokens.forEach(function (c) { tdRows.push({ key: 'color.theme.dark.' + c.name, val: c.dark, isColor: true, hex: c.dark }) });
+   448→  1997→                    groups.push({ title: 'Color — Theme Dark', count: tdRows.length, rows: tdRows });
+   449→  1998→                    var typRows = [
+   450→  1999→                        { key: 'typography.displayH1', val: 'Newsreader 600 / clamp(36-56px) / -0.02em' },
+   451→  2000→                        { key: 'typography.displayH2', val: 'Newsreader 600 / clamp(28-40px) / -0.015em' },
+   452→  2001→                        { key: 'typography.displayH3', val: 'Newsreader 500 / clamp(22-28px) / -0.01em' },
+   453→  2002→                        { key: 'typography.heading4', val: 'Newsreader 600 / 20px / -0.01em' },
+   454→  2003→                        { key: 'typography.bodyLarge', val: 'Outfit 400 / 18px / 1.6' },
+   455→  2004→                        { key: 'typography.body', val: 'Outfit 400 / 16px / 1.6' },
+   456→  2005→                        { key: 'typography.bodySmall', val: 'Outfit 400 / 14px / 1.5' },
+   457→  2006→                        { key: 'typography.caption', val: 'Outfit 400 / 12px / 1.5' },
+   458→  2007→                        { key: 'typography.overline', val: 'Outfit 600 / 12px / 0.08em' }
+   459→  2008→                    ];
+   460→  2009→                    groups.push({ title: 'Typography', count: typRows.length, rows: typRows });
+   461→  2010→                    var spRows = spacingScale.map(function (s) { return { key: 'spacing.' + s.l, val: s.v } });
+   462→  2011→                    groups.push({ title: 'Spacing', count: spRows.length, rows: spRows });
+   463→  2012→                    var rdRows = radiusScale.map(function (r) { return { key: 'radius.' + r.l, val: r.v } });
+   464→  2013→                    groups.push({ title: 'Radius', count: rdRows.length, rows: rdRows });
+   465→  2014→                    var shlRows = shadowScale.light.map(function (s) { return { key: 'shadow.light.' + s.l, val: s.v } });
+   466→  2015→                    groups.push({ title: 'Shadow — Light', count: shlRows.length, rows: shlRows });
+   467→  2016→                    var shdRows = shadowScale.dark.map(function (s) { return { key: 'shadow.dark.' + s.l, val: s.v } });
+   468→  2017→                    groups.push({ title: 'Shadow — Dark', count: shdRows.length, rows: shdRows });
+   469→  2018→                    var icRows = iconSizes.map(function (s) { return { key: 'icon.size.' + s.l, val: s.v } });
+   470→  2019→                    icRows.push({ key: 'icon.strokeWidth', val: '2px' });
+   471→  2020→                    groups.push({ title: 'Icon', count: icRows.length, rows: icRows });
+   472→  2021→                    var bwRows = [{ key: 'borderWidth.1', val: '1px' }, { key: 'borderWidth.2', val: '2px' }, { key: 'borderWidth.3', val: '3px' }];
+   473→  2022→                    groups.push({ title: 'Border Width', count: bwRows.length, rows: bwRows });
+   474→  2023→                    groups.forEach(function (g, idx) {
+   475→  2024→                        var group = document.createElement('div'); group.className = 'tm-group' + (idx > 3 ? ' collapsed' : '');
+   476→  2025→                        var bodyMaxHeight = g.rows.length * 44;
+   477→  2026→                        group.innerHTML = '<div class="tm-header"><div class="tm-header-left"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg><span class="body-sm" style="font-weight:600">' + g.title + '</span></div><span class="tm-count">' + g.count + '</span></div><div class="tm-body" style="max-height:' + bodyMaxHeight + 'px"></div>';
+   478→  2027→                        var body = group.querySelector('.tm-body');
+   479→  2028→                        g.rows.forEach(function (r) {
+   480→  2029→                            var row = document.createElement('div'); row.className = 'tm-row';
+   481→  2030→                            var rightHtml = '<div class="tm-row-right"><span class="tm-val">' + r.val + '</span></div>';
+   482→  2031→                            if (r.isColor) { rightHtml = '<div class="tm-row-right"><div class="tm-swatch" style="background:' + r.hex + '"></div><span class="tm-val">' + r.val + '</span></div>' }
+   483→  2032→                            row.innerHTML = '<span class="tm-key">' + r.key + '</span>' + rightHtml;
+   484→  2033→                            (function (k, v) { row.onclick = function () { copyText(k + ': ' + v) } })(r.key, r.val);
+   485→  2034→                            body.appendChild(row);
+   486→  2035→                        });
+   487→  2036→                        group.querySelector('.tm-header').addEventListener('click', function () { group.classList.toggle('collapsed') });
+   488→  2037→                        container.appendChild(group);
+   489→  2038→                    });
+   490→  2039→                }
+   491→
+   492→[showing lines 1550-2039 of 2218; use offset=2040 with limit to continue reading]

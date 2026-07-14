@@ -1,0 +1,1446 @@
+/* =====================================================================
+   Notaflow Design System — v1.1
+   Editorial Modern — sophisticated, warm, earthy, editorial-yet-functional
+   This stylesheet is self-contained and also bundled verbatim on export.
+   ===================================================================== */
+
+.nf-scope {
+    --wine: #7f2924;
+    --ash: #665345;
+    --taupe: #9b8d89;
+    --dust: #d5ccca;
+    --carbon: #2b2621;
+    --success: #4a6b4f;
+    --warning: #c78122;
+    --danger: #b83737;
+    --background: #F8F7F6;
+    --card: #FFFFFF;
+    --secondary: #EEEBE9;
+    --muted: #F2EFEF;
+    --foreground: #2B2621;
+    --muted-foreground: #5D5452;
+    --primary: #7F2924;
+    --border: #D5CCCA;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
+    --space-20: 80px;
+    --space-24: 96px;
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-pill: 9999px;
+    --icon-xs: 14px;
+    --icon-sm: 16px;
+    --icon-md: 20px;
+    --icon-lg: 24px;
+    --icon-xl: 32px;
+    --icon-stroke: 2px;
+    --shadow-sm: 0 1px 2px rgba(43, 38, 33, .06);
+    --shadow-md: 0 4px 12px rgba(43, 38, 33, .08);
+    --shadow-lg: 0 8px 32px rgba(43, 38, 33, .1);
+    --shadow-xl: 0 16px 48px rgba(43, 38, 33, .14)
+}
+
+.dark .nf-scope {
+    --background: #161311;
+    --card: #1E1A18;
+    --secondary: #2B2623;
+    --muted: #352F2B;
+    --foreground: #F8F7F6;
+    --muted-foreground: #B5A9A5;
+    --primary: #D9655F;
+    --border: #47403B;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .25);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, .3);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, .35);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, .4)
+}
+
+/* Reset scoped to the Notaflow surface so it never fights Tailwind layers */
+.nf-scope,
+.nf-scope *,
+.nf-scope *::before,
+.nf-scope *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+.nf-scope {
+    font-family: var(--font-outfit), system-ui, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    transition: background .35s, color .35s;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased
+}
+
+.nf-scope .h1-d {
+    font-family: var(--font-newsreader), Georgia, serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 600;
+    letter-spacing: -.02em;
+    line-height: 1.12
+}
+
+.nf-scope .h2-d {
+    font-family: var(--font-newsreader), Georgia, serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 600;
+    letter-spacing: -.015em;
+    line-height: 1.2
+}
+
+.nf-scope .h3-d {
+    font-family: var(--font-newsreader), Georgia, serif;
+    font-size: clamp(22px, 3vw, 28px);
+    font-weight: 500;
+    letter-spacing: -.01em;
+    line-height: 1.3
+}
+
+.nf-scope .h4 {
+    font-family: var(--font-newsreader), Georgia, serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    line-height: 1.4
+}
+
+.nf-scope .body-lg {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6
+}
+
+.nf-scope .body {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6
+}
+
+.nf-scope .body-sm {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5
+}
+
+.nf-scope .caption {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--muted-foreground)
+}
+
+.nf-scope .overline {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--muted-foreground);
+    line-height: 1.5
+}
+
+.nf-scope ::-webkit-scrollbar {
+    width: 6px
+}
+
+.nf-scope ::-webkit-scrollbar-track {
+    background: var(--muted)
+}
+
+.nf-scope ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: var(--radius-pill)
+}
+
+.nf-scope .nf-navbar {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 900;
+    width: calc(100% - 48px);
+    max-width: 1200px;
+    padding: 14px 32px;
+    border-radius: var(--radius-xl);
+    background: transparent;
+    border: 1px solid transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    transition: max-width .45s cubic-bezier(.4, 0, .2, 1), padding .45s cubic-bezier(.4, 0, .2, 1)
+}
+
+.nf-scope .nf-navbar.scrolled {
+    max-width: 980px;
+    padding: 10px 24px;
+    border-radius: var(--radius-pill);
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px)
+}
+
+@media(max-width:768px) {
+    .nf-scope .nf-navbar {
+        top: 10px;
+        width: calc(100% - 24px);
+        padding: 10px 16px
+    }
+
+    .nf-scope .nf-navbar.scrolled {
+        max-width: 100%;
+        padding: 8px 14px
+    }
+
+    .nf-scope .hide-mobile {
+        display: none !important
+    }
+}
+
+@media(min-width:769px) {
+    .nf-scope .hide-desktop {
+        display: none !important
+    }
+}
+
+.nf-scope .drawer-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 950;
+    pointer-events: none
+}
+
+.nf-scope .drawer-overlay.open {
+    pointer-events: auto
+}
+
+.nf-scope .drawer-bg {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    opacity: 0;
+    transition: opacity .3s
+}
+
+.nf-scope .drawer-overlay.open .drawer-bg {
+    opacity: 1
+}
+
+.nf-scope .drawer-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(320px, 85vw);
+    height: 100%;
+    background: var(--card);
+    transform: translateX(100%);
+    transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+    padding: 32px 24px;
+    overflow-y: auto;
+    border-left: 1px solid var(--border)
+}
+
+.nf-scope .drawer-overlay.open .drawer-panel {
+    transform: translateX(0)
+}
+
+.nf-scope .nav-link {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted-foreground);
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: var(--radius-md);
+    transition: color .2s, background .2s
+}
+
+.nf-scope .nav-link:hover {
+    color: var(--foreground);
+    background: var(--muted)
+}
+
+.nf-scope .nav-link.active {
+    color: var(--primary);
+    background: rgba(127, 41, 36, .06)
+}
+
+.dark .nf-scope .nav-link.active {
+    background: rgba(217, 101, 95, .1)
+}
+
+.nf-scope .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border);
+    background: var(--muted);
+    transition: border-color .2s, background .2s, box-shadow .2s
+}
+
+.nf-scope .search-bar:focus-within {
+    border-color: var(--primary);
+    background: var(--card);
+    box-shadow: 0 0 0 3px rgba(127, 41, 36, .08)
+}
+
+.dark .nf-scope .search-bar:focus-within {
+    box-shadow: 0 0 0 3px rgba(217, 101, 95, .1)
+}
+
+.nf-scope .search-bar svg {
+    width: 14px;
+    height: 14px;
+    color: var(--muted-foreground);
+    flex-shrink: 0
+}
+
+.nf-scope .search-bar input {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 13px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--foreground);
+    width: 100%
+}
+
+.nf-scope .search-bar input::placeholder {
+    color: var(--muted-foreground)
+}
+
+.nf-scope .search-bar .search-clear {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--border);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    border: none;
+    color: var(--foreground);
+    transition: background .15s;
+    padding: 0
+}
+
+.nf-scope .search-bar .search-clear:hover {
+    background: var(--muted-foreground)
+}
+
+.nf-scope .search-bar .search-clear svg {
+    width: 10px;
+    height: 10px;
+    color: var(--foreground)
+}
+
+.nf-scope .search-bar.has-query .search-clear {
+    display: flex
+}
+
+.nf-scope .search-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    max-height: 320px;
+    overflow-y: auto;
+    display: none;
+    z-index: 100
+}
+
+.nf-scope .search-dropdown.open {
+    display: block
+}
+
+.nf-scope .search-dropdown-item {
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background .1s;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.nf-scope .search-dropdown-item:hover {
+    background: var(--muted)
+}
+
+.nf-scope .search-dropdown-item svg {
+    width: 14px;
+    height: 14px;
+    color: var(--muted-foreground);
+    flex-shrink: 0
+}
+
+.nf-scope .search-dropdown-item .sd-label {
+    font-size: 14px;
+    color: var(--foreground)
+}
+
+.nf-scope .search-dropdown-item .sd-cat {
+    font-size: 11px;
+    color: var(--muted-foreground);
+    margin-left: auto
+}
+
+.nf-scope .search-dropdown-empty {
+    padding: 20px 16px;
+    text-align: center;
+    color: var(--muted-foreground);
+    font-size: 13px
+}
+
+.nf-scope .theme-toggle {
+    width: 44px;
+    height: 24px;
+    border-radius: var(--radius-pill);
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    position: relative;
+    cursor: pointer;
+    transition: background .3s;
+    flex-shrink: 0
+}
+
+.nf-scope .theme-toggle-knob {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--foreground);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.dark .nf-scope .theme-toggle-knob {
+    transform: translateX(20px)
+}
+
+.nf-scope .theme-toggle-knob svg {
+    width: 11px;
+    height: 11px
+}
+
+.nf-scope .toggle-sun {
+    color: var(--background)
+}
+
+.nf-scope .toggle-moon {
+    color: var(--background);
+    display: none
+}
+
+.dark .nf-scope .toggle-sun {
+    display: none
+}
+
+.dark .nf-scope .toggle-moon {
+    display: block
+}
+
+.nf-scope .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-outfit), sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1;
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: all .2s;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden
+}
+
+.nf-scope .btn:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px
+}
+
+.nf-scope .btn:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+    transform: none !important;
+    filter: none !important
+}
+
+.nf-scope .btn-brand {
+    background: var(--primary);
+    color: #fff
+}
+
+.nf-scope .btn-brand:hover:not(:disabled) {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md)
+}
+
+.nf-scope .btn-brand:active:not(:disabled) {
+    transform: translateY(0);
+    filter: brightness(.95)
+}
+
+.nf-scope .btn-secondary {
+    background: var(--secondary);
+    color: var(--foreground)
+}
+
+.nf-scope .btn-secondary:hover:not(:disabled) {
+    filter: brightness(1.05);
+    transform: translateY(-1px)
+}
+
+.nf-scope .btn-outline {
+    background: transparent;
+    color: var(--foreground);
+    border: 1px solid var(--border)
+}
+
+.nf-scope .btn-outline:hover:not(:disabled) {
+    background: var(--muted);
+    border-color: var(--muted-foreground)
+}
+
+.nf-scope .btn-ghost {
+    background: transparent;
+    color: var(--foreground)
+}
+
+.nf-scope .btn-ghost:hover:not(:disabled) {
+    background: var(--muted)
+}
+
+.nf-scope .btn-link {
+    background: transparent;
+    color: var(--primary);
+    padding: 0;
+    border-radius: 0
+}
+
+.nf-scope .btn-link:hover:not(:disabled) {
+    text-decoration: underline
+}
+
+.nf-scope .btn-danger {
+    background: var(--danger);
+    color: #fff
+}
+
+.nf-scope .btn-danger:hover:not(:disabled) {
+    filter: brightness(1.15);
+    transform: translateY(-1px)
+}
+
+.nf-scope .btn-inverted {
+    background: #fff;
+    color: var(--wine)
+}
+
+.nf-scope .btn-inverted:hover:not(:disabled) {
+    filter: brightness(.95);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md)
+}
+
+.nf-scope .btn-on-brand {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .45)
+}
+
+.nf-scope .btn-on-brand:hover:not(:disabled) {
+    background: rgba(255, 255, 255, .12);
+    border-color: rgba(255, 255, 255, .7)
+}
+
+.nf-scope .btn-icon {
+    padding: 8px
+}
+
+.nf-scope .btn-sm {
+    font-size: 13px;
+    padding: 7px 14px
+}
+
+.nf-scope .btn-lg {
+    font-size: 16px;
+    padding: 14px 28px
+}
+
+.nf-scope .btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0
+}
+
+.nf-scope .btn.loading {
+    pointer-events: none;
+    color: transparent !important
+}
+
+.nf-scope .btn.loading *:not(.btn-spinner) {
+    visibility: hidden
+}
+
+.nf-scope .btn-spinner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 2.5px solid rgba(255, 255, 255, .25);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: nf-spin .8s cubic-bezier(.4, .15, .6, .85) infinite;
+    display: none
+}
+
+.nf-scope .btn.loading .btn-spinner {
+    display: block
+}
+
+.nf-scope .btn-outline.loading .btn-spinner,
+.nf-scope .btn-ghost.loading .btn-spinner,
+.nf-scope .btn-secondary.loading .btn-spinner {
+    border-color: var(--border);
+    border-top-color: var(--primary)
+}
+
+.nf-scope .btn-danger.loading .btn-spinner {
+    border-color: rgba(255, 255, 255, .25);
+    border-top-color: #fff
+}
+
+@keyframes nf-spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.nf-scope .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+    line-height: 1.5
+}
+
+.nf-scope .badge-neutral {
+    background: var(--muted);
+    color: var(--muted-foreground)
+}
+
+.nf-scope .badge-success {
+    background: rgba(74, 107, 79, .12);
+    color: var(--success)
+}
+
+.nf-scope .badge-warning {
+    background: rgba(199, 129, 34, .12);
+    color: var(--warning)
+}
+
+.nf-scope .badge-danger {
+    background: rgba(184, 55, 55, .12);
+    color: var(--danger)
+}
+
+.nf-scope .nf-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    transition: box-shadow .2s, transform .2s
+}
+
+.nf-scope .nf-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px)
+}
+
+.nf-scope .nf-card-accent-top {
+    border-top: 3px solid var(--primary)
+}
+
+.nf-scope .nf-card-accent-left {
+    border-left: 3px solid var(--primary)
+}
+
+.nf-scope .nf-card-brand {
+    background: var(--wine);
+    border-color: var(--wine);
+    color: #fff
+}
+
+.nf-scope .nf-card-brand .caption {
+    color: rgba(255, 255, 255, .7)
+}
+
+.nf-scope .nf-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    position: relative
+}
+
+.nf-scope .nf-checkbox input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0
+}
+
+.nf-scope .nf-checkbox-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+    flex-shrink: 0;
+    background: var(--card);
+    margin-top: 1px
+}
+
+.nf-scope .nf-checkbox:hover .nf-checkbox-box {
+    border-color: var(--primary)
+}
+
+.nf-scope .nf-checkbox input:checked+.nf-checkbox-box {
+    background: var(--primary);
+    border-color: var(--primary)
+}
+
+.nf-scope .nf-checkbox-box svg {
+    width: 12px;
+    height: 12px;
+    color: #fff;
+    opacity: 0;
+    transform: scale(0);
+    transition: all .15s ease
+}
+
+.nf-scope .nf-checkbox input:checked+.nf-checkbox-box svg {
+    opacity: 1;
+    transform: scale(1)
+}
+
+.nf-scope .nf-checkbox input:focus-visible+.nf-checkbox-box {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px
+}
+
+.nf-scope .nf-checkbox.disabled {
+    opacity: .4;
+    cursor: not-allowed
+}
+
+.nf-scope .nf-checkbox-label {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 14px;
+    color: var(--foreground);
+    line-height: 1.5
+}
+
+.nf-scope .nf-checkbox-desc {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 12px;
+    color: var(--muted-foreground);
+    line-height: 1.4;
+    margin-top: 2px
+}
+
+.nf-scope .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+}
+
+.nf-scope .form-label {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--foreground)
+}
+
+.nf-scope .form-input {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--card);
+    color: var(--foreground);
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    width: 100%
+}
+
+.nf-scope .form-input::placeholder {
+    color: var(--muted-foreground)
+}
+
+.nf-scope .form-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(127, 41, 36, .1)
+}
+
+.dark .nf-scope .form-input:focus {
+    box-shadow: 0 0 0 3px rgba(217, 101, 95, .15)
+}
+
+.nf-scope .form-input-success {
+    border-color: var(--success) !important
+}
+
+.nf-scope .form-input-error {
+    border-color: var(--danger) !important
+}
+
+.nf-scope .form-helper {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 12px;
+    color: var(--muted-foreground);
+    display: flex;
+    align-items: center;
+    gap: 4px
+}
+
+.nf-scope .form-helper-error {
+    color: var(--danger)
+}
+
+.nf-scope .form-helper-success {
+    color: var(--success)
+}
+
+.nf-scope .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.nf-scope .stat-value {
+    font-family: var(--font-newsreader), Georgia, serif;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -.02em;
+    color: var(--foreground);
+    line-height: 1.1
+}
+
+.nf-scope .stat-label {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 14px;
+    color: var(--muted-foreground)
+}
+
+.nf-scope .stat-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 13px;
+    font-weight: 500
+}
+
+.nf-scope .stat-trend-up {
+    color: var(--success)
+}
+
+.nf-scope .stat-trend-down {
+    color: var(--danger)
+}
+
+.nf-scope .nf-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background: var(--card)
+}
+
+.nf-scope .nf-alert svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 1px
+}
+
+.nf-scope .nf-alert-success {
+    border-color: var(--success);
+    background: rgba(74, 107, 79, .05)
+}
+
+.nf-scope .nf-alert-success svg {
+    color: var(--success)
+}
+
+.nf-scope .nf-alert-success .alert-title {
+    color: var(--success)
+}
+
+.nf-scope .nf-alert-warning {
+    border-color: var(--warning);
+    background: rgba(199, 129, 34, .05)
+}
+
+.nf-scope .nf-alert-warning svg {
+    color: var(--warning)
+}
+
+.nf-scope .nf-alert-warning .alert-title {
+    color: var(--warning)
+}
+
+.nf-scope .nf-alert-danger {
+    border-color: var(--danger);
+    background: rgba(184, 55, 55, .05)
+}
+
+.nf-scope .nf-alert-danger svg {
+    color: var(--danger)
+}
+
+.nf-scope .nf-alert-danger .alert-title {
+    color: var(--danger)
+}
+
+.nf-scope .alert-title {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4
+}
+
+.nf-scope .color-swatch {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+    border: 1px solid var(--border)
+}
+
+.nf-scope .color-swatch:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg)
+}
+
+.nf-scope .swatch-color {
+    height: 72px;
+    display: flex;
+    align-items: flex-end;
+    padding: 8px;
+    gap: 4px
+}
+
+.nf-scope .swatch-inset {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-sm);
+    border: 2px solid rgba(255, 255, 255, .4)
+}
+
+.nf-scope .swatch-info {
+    padding: 12px 14px;
+    background: var(--card);
+    transition: background .3s
+}
+
+.nf-scope .swatch-name {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 2px
+}
+
+.nf-scope .swatch-hex {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    color: var(--muted-foreground)
+}
+
+.nf-scope .swatch-other {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 11px;
+    color: var(--muted-foreground);
+    margin-top: 2px
+}
+
+.nf-scope .toast-wrap {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+    max-width: 380px
+}
+
+.nf-scope .toast {
+    padding: 14px 18px;
+    border-radius: var(--radius-lg);
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 14px;
+    color: var(--foreground);
+    animation: nf-toast-in .3s ease forwards;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    pointer-events: auto;
+    position: relative
+}
+
+.nf-scope .toast.out {
+    animation: nf-toast-out .3s ease forwards
+}
+
+.nf-scope .toast-icon {
+    flex-shrink: 0;
+    margin-top: 1px
+}
+
+.nf-scope .toast-icon svg {
+    width: 18px;
+    height: 18px
+}
+
+.nf-scope .toast-body {
+    flex: 1;
+    min-width: 0
+}
+
+.nf-scope .toast-title {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.3;
+    margin-bottom: 2px
+}
+
+.nf-scope .toast-msg {
+    font-size: 12px;
+    color: var(--muted-foreground);
+    line-height: 1.4
+}
+
+.nf-scope .toast-close {
+    flex-shrink: 0;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: var(--radius-sm);
+    transition: background .15s;
+    color: var(--muted-foreground);
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.nf-scope .toast-close:hover {
+    background: var(--muted)
+}
+
+.nf-scope .toast-close svg {
+    width: 14px;
+    height: 14px
+}
+
+.nf-scope .toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    animation: nf-toast-progress linear forwards
+}
+
+.nf-scope .toast-success .toast-icon svg {
+    color: var(--success)
+}
+
+.nf-scope .toast-success .toast-title {
+    color: var(--success)
+}
+
+.nf-scope .toast-success .toast-progress {
+    background: var(--success)
+}
+
+.nf-scope .toast-error .toast-icon svg {
+    color: var(--danger)
+}
+
+.nf-scope .toast-error .toast-title {
+    color: var(--danger)
+}
+
+.nf-scope .toast-error .toast-progress {
+    background: var(--danger)
+}
+
+.nf-scope .toast-warning .toast-icon svg {
+    color: var(--warning)
+}
+
+.nf-scope .toast-warning .toast-title {
+    color: var(--warning)
+}
+
+.nf-scope .toast-warning .toast-progress {
+    background: var(--warning)
+}
+
+.nf-scope .toast-info .toast-icon svg {
+    color: var(--primary)
+}
+
+.nf-scope .toast-info .toast-title {
+    color: var(--primary)
+}
+
+.nf-scope .toast-info .toast-progress {
+    background: var(--primary)
+}
+
+@keyframes nf-toast-in {
+    from {
+        transform: translateX(120%);
+        opacity: 0
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1
+    }
+}
+
+@keyframes nf-toast-out {
+    from {
+        transform: translateX(0);
+        opacity: 1
+    }
+
+    to {
+        transform: translateX(120%);
+        opacity: 0
+    }
+}
+
+@keyframes nf-toast-progress {
+    from {
+        width: 100%
+    }
+
+    to {
+        width: 0%
+    }
+}
+
+.nf-scope .logo-text {
+    font-family: var(--font-newsreader), Georgia, serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -.02em;
+    color: var(--foreground);
+    text-decoration: none
+}
+
+.nf-scope .logo-dot {
+    color: var(--primary)
+}
+
+.nf-scope .token-map {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden
+}
+
+.nf-scope .tm-group {
+    border-bottom: 1px solid var(--border)
+}
+
+.nf-scope .tm-group:last-child {
+    border-bottom: none
+}
+
+.nf-scope .tm-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    cursor: pointer;
+    transition: background .15s;
+    user-select: none
+}
+
+.nf-scope .tm-header:hover {
+    background: var(--muted)
+}
+
+.nf-scope .tm-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.nf-scope .tm-header-left svg {
+    width: 16px;
+    height: 16px;
+    color: var(--primary);
+    transition: transform .2s
+}
+
+.nf-scope .tm-group.collapsed .tm-header-left svg {
+    transform: rotate(-90deg)
+}
+
+.nf-scope .tm-count {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted-foreground);
+    background: var(--muted);
+    padding: 2px 8px;
+    border-radius: var(--radius-pill)
+}
+
+.nf-scope .tm-body {
+    overflow: hidden;
+    transition: max-height .3s ease
+}
+
+.nf-scope .tm-group.collapsed .tm-body {
+    max-height: 0 !important
+}
+
+.nf-scope .tm-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 18px 10px 44px;
+    border-top: 1px solid var(--border);
+    transition: background .1s;
+    cursor: pointer
+}
+
+.nf-scope .tm-row:hover {
+    background: var(--muted)
+}
+
+.nf-scope .tm-key {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    color: var(--foreground)
+}
+
+.nf-scope .tm-val {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    color: var(--muted-foreground)
+}
+
+.nf-scope .tm-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    flex-shrink: 0
+}
+
+.nf-scope .tm-row-right {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.nf-scope .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+    gap: 4px
+}
+
+.nf-scope .icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 6px;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all .2s
+}
+
+.nf-scope .icon-item:hover {
+    background: var(--muted);
+    border-color: var(--border)
+}
+
+.nf-scope .icon-item.hidden {
+    display: none
+}
+
+.nf-scope .icon-item span {
+    font-size: 11px;
+    color: var(--muted-foreground)
+}
+
+.nf-scope .icon-item svg {
+    width: 20px;
+    height: 20px;
+    color: var(--foreground)
+}
+
+/* Logo gallery */
+.nf-scope .logo-tile {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--card);
+    transition: box-shadow .2s, transform .2s;
+    cursor: pointer
+}
+
+.nf-scope .logo-tile:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px)
+}
+
+.nf-scope .logo-tile-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 16px;
+    min-height: 120px
+}
+
+.nf-scope .logo-tile-preview svg {
+    max-width: 100%;
+    height: auto
+}
+
+.nf-scope .logo-tile-info {
+    padding: 10px 14px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px
+}
+
+.nf-scope .logo-tile-name {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--foreground)
+}
+
+.nf-scope .logo-tile-meta {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 10px;
+    color: var(--muted-foreground)
+}
+
+.nf-scope .section-sep {
+    border-bottom: 1px solid var(--border)
+}
+
+.nf-scope .noise-bg {
+    position: relative;
+    overflow: hidden
+}
+
+.nf-scope .noise-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0
+}
+
+.nf-scope .noise-bg>* {
+    position: relative;
+    z-index: 1
+}
+
+.nf-scope .hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--primary);
+    opacity: .07;
+    filter: blur(80px);
+    pointer-events: none
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .nf-scope *,
+    .nf-scope *::before,
+    .nf-scope *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important
+    }
+}
