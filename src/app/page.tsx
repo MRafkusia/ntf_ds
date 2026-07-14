@@ -257,7 +257,7 @@ export default function Home() {
       // full component stylesheet (the "styles")
       let cssText = "";
       try {
-        const res = await fetch("/notaflow.css");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/notaflow.css`);
         cssText = await res.text();
       } catch {
         cssText = buildThemeCSS() + "\n/* Full component CSS unavailable — see theme.css for tokens. */\n";
@@ -300,7 +300,7 @@ export default function Home() {
 
       let cssText = "";
       try {
-        const res = await fetch("/notaflow.css");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/notaflow.css`);
         cssText = await res.text();
       } catch {
         cssText = buildThemeCSS();
