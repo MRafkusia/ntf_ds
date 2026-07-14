@@ -1,9 +1,0 @@
-<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background Transparan -->
-  <rect width="300" height="100" fill="none" />
-  
-  <!-- Teks "Notaflow" menggunakan font Serif yang mirip (atau path hasil tracing) -->
-  <text x="10" y="70" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-weight="500" fill="white">
-    Notaflow<tspan fill="#E57373">.</tspan>
-  </text>
-</svg>
