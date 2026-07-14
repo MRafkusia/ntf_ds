@@ -58,3 +58,31 @@ Stage Summary:
 - Section "Spacing & Radius" yang sebelumnya terjepit di mobile sekarang stack ke 1 kolom dengan gap proporsional.
 - Padding section & margin blok besar turun otomatis di mobile untuk hemat ruang vertikal.
 - Breakpoint ikut ter-bundle di export (`public/notaflow.css` punya `.nf-grid-2` + media query yang sama) sehingga consumer dapat responsivitas yang setara.
+
+---
+Task ID: 3
+Agent: main (Frontend Engineer)
+Task: Memastikan semua file proyek ter-preview dengan benar ketika di-push ke GitHub (user menanyakan "ketika saya push ke GitHub apakah semua file bisa terpreview?").
+
+Work Log:
+- Mengaudit `.gitignore` dan `git status` untuk menentukan file mana yang akan ter-push vs di-ignore.
+- Menemukan masalah: 3 item yang SUDAH ter-commit padahal seharusnya tidak:
+  1. `.env` (berisi `DATABASE_URL`) — best practice jangan commit env file (risiko kebocoran secret).
+  2. `upload/` folder — 9 file input user (8 SVG + 1 file Pasted Content 113KB), bukan bagian source proyek.
+  3. `download/README.md` — placeholder scratch folder.
+- Menambahkan `/upload/` dan `/download/` ke `.gitignore` (`.env*` sudah ada di baris 34).
+- Menjalankan `git rm --cached -r .env upload download` untuk untrack (file fisik tetap di disk, hanya dihapus dari git index).
+- Commit perubahan: "chore: untrack .env and scratch asset folders (upload/, download/)".
+- Verifikasi: file fisik (.env, upload/, download/) masih ada lokal; `git check-ignore` konfirmasi ketiganya sekarang ter-ignore.
+- Verifikasi file proyek Notaflow tetap ter-track: 9 file source utama (page.tsx, layout.tsx, globals.css, notaflow.css, notaflow-data.ts, next.config.ts, package.json, tsconfig.json, tailwind.config.ts), 8 SVG logo di public/logos/, public/notaflow.css, 48 komponen shadcn/ui.
+- Total 103 file akan ter-push ke GitHub.
+
+Stage Summary:
+- **Yang TER-PREVIEW di GitHub** (ter-track, 103 file):
+  - Source code TSX/TS/CSS → GitHub render dengan syntax highlighting.
+  - 8 SVG logo di `public/logos/` → GitHub render sebagai gambar inline.
+  - `public/notaflow.css` (stylesheet consumer) → syntax highlighting.
+  - `package.json`, `tsconfig.json`, `next.config.ts`, `tailwind.config.ts` → terlihat.
+  - 48 komponen shadcn/ui di `src/components/ui/`.
+- **Yang TIDAK ter-push** (di-ignore): `node_modules/`, `.next/` (build output), `dev.log`/`server.log`, `.env`, `upload/` (input user), `download/` (scratch), `skills/`.
+- `.env` dan `upload/` sebelumnya SUDAH ter-commit → sudah di-untrack via `git rm --cached` agar tidak ter-push ulang. Catatan: jika repo sudah pernah di-push ke GitHub sebelumnya, `.env` lama masih ada di history — disarankan `git filter-repo` atau re-create repo untuk benar-benar menghapus dari history.
