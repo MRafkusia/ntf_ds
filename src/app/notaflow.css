@@ -1430,9 +1430,51 @@
     pointer-events: none
 }
 
+/* ---------------------------------------------------------------------
+   Responsive layout helpers — breakpoint scale
+   sm: 640px · md: 768px · lg: 1024px
+   Two-column grids that must stack on small screens use .nf-grid-2.
+   --------------------------------------------------------------------- */
+.nf-scope .nf-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px
+}
+
+/* Tablet — tighten the two-column gap */
+@media(max-width:1024px) {
+    .nf-scope .nf-grid-2 {
+        gap: 32px
+    }
+}
+
+/* Mobile — stack to a single column, shrink section padding */
+@media(max-width:768px) {
+    .nf-scope .nf-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 32px
+    }
+
+    .nf-scope .nf-section-pad {
+        padding-top: 56px !important;
+        padding-bottom: 48px !important
+    }
+
+    .nf-scope .nf-block-mb {
+        margin-bottom: 56px !important
+    }
+}
+
+/* Small mobile — compact spacing */
+@media(max-width:480px) {
+    .nf-scope .nf-grid-2 {
+        gap: 24px
+    }
 }
 
 @media(prefers-reduced-motion:reduce) {

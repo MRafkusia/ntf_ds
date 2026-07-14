@@ -548,7 +548,7 @@ export default function Home() {
       {/* ---------------- Main ---------------- */}
       <main style={{ maxWidth: 1120, margin: "0 auto", padding: "0 24px", width: "100%" }}>
         {/* ===== Foundations ===== */}
-        <section id="foundations" className="section-sep" style={{ padding: "80px 0 64px" }}>
+        <section id="foundations" className="section-sep nf-section-pad" style={{ padding: "80px 0 64px" }}>
           <div style={{ marginBottom: 48 }}>
             <p className="overline" style={{ marginBottom: 8 }}>Part 01</p>
             <h2 className="h2-d">Foundations</h2>
@@ -558,7 +558,7 @@ export default function Home() {
           </div>
 
           {/* ----- Brand & Logos ----- */}
-          <div id="sec-logos" style={{ marginBottom: 80 }}>
+          <div id="sec-logos" className="nf-block-mb" style={{ marginBottom: 80 }}>
             <h3 className="h3-d" style={{ marginBottom: 8 }}>Brand &amp; Logos</h3>
             <p className="body-sm" style={{ color: "var(--muted-foreground)", marginBottom: 20 }}>
               The full SVG logo set — wordmarks, app icons and favicon. Every asset is bundled in the export. Click a tile to copy its SVG.
@@ -589,7 +589,7 @@ export default function Home() {
           </div>
 
           {/* ----- Color Palette ----- */}
-          <div id="sec-colors" style={{ marginBottom: 80 }}>
+          <div id="sec-colors" className="nf-block-mb" style={{ marginBottom: 80 }}>
             <h3 className="h3-d" style={{ marginBottom: 24 }}>Color Palette</h3>
             <p className="overline" style={{ marginBottom: 16 }}>Brand Colors</p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(180px,1fr))", gap: 16, marginBottom: 48 }}>
@@ -606,7 +606,7 @@ export default function Home() {
           </div>
 
           {/* ----- Typography ----- */}
-          <div id="sec-typography" style={{ marginBottom: 80 }}>
+          <div id="sec-typography" className="nf-block-mb" style={{ marginBottom: 80 }}>
             <h3 className="h3-d" style={{ marginBottom: 24 }}>Typography</h3>
             <div style={{ borderLeft: "2px solid var(--border)", paddingLeft: 28, display: "flex", flexDirection: "column", gap: 40 }}>
               <div>
@@ -645,7 +645,7 @@ export default function Home() {
           </div>
 
           {/* ----- Iconography ----- */}
-          <div id="sec-iconography" style={{ marginBottom: 80 }}>
+          <div id="sec-iconography" className="nf-block-mb" style={{ marginBottom: 80 }}>
             <h3 className="h3-d" style={{ marginBottom: 24 }}>Iconography</h3>
             <p className="body-sm" style={{ color: "var(--muted-foreground)", marginBottom: 20 }}>
               Lucide icons — 2px stroke. Click to copy name.
@@ -679,7 +679,7 @@ export default function Home() {
           {/* ----- Spacing & Radius ----- */}
           <div id="sec-spacing" style={{ marginBottom: 32 }}>
             <h3 className="h3-d" style={{ marginBottom: 24 }}>Spacing &amp; Radius</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }}>
+            <div className="nf-grid-2">
               <div>
                 <p className="overline" style={{ marginBottom: 16 }}>Spacing Scale (4px base)</p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -709,14 +709,14 @@ export default function Home() {
         </section>
 
         {/* ===== Components ===== */}
-        <section id="components" className="section-sep" style={{ padding: "80px 0 64px" }}>
+        <section id="components" className="section-sep nf-section-pad" style={{ padding: "80px 0 64px" }}>
           <div style={{ marginBottom: 48 }}>
             <p className="overline" style={{ marginBottom: 8 }}>Part 02</p>
             <h2 className="h2-d">Components</h2>
           </div>
 
           {/* Button */}
-          <div style={{ marginBottom: 80 }}>
+          <div className="nf-block-mb" style={{ marginBottom: 80 }}>
             <h3 className="h3-d" style={{ marginBottom: 24 }}>Button</h3>
             <p className="overline" style={{ marginBottom: 12 }}>Variants</p>
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10, marginBottom: 32 }}>
@@ -756,7 +756,7 @@ export default function Home() {
           </div>
 
           {/* Badge */}
-          <div style={{ marginBottom: 80 }}>
+          <div className="nf-block-mb" style={{ marginBottom: 80 }}>
             <h3 className="h3-d" style={{ marginBottom: 24 }}>Badge</h3>
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10 }}>
               <span className="badge badge-neutral">Draft</span>
@@ -767,7 +767,7 @@ export default function Home() {
           </div>
 
           {/* Card */}
-          <div style={{ marginBottom: 80 }}>
+          <div className="nf-block-mb" style={{ marginBottom: 80 }}>
             <h3 className="h3-d" style={{ marginBottom: 24 }}>Card</h3>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(260px,1fr))", gap: 16 }}>
               <div className="nf-card">
@@ -812,7 +812,7 @@ export default function Home() {
           </div>
 
           {/* Checkbox */}
-          <div style={{ marginBottom: 80 }}>
+          <div className="nf-block-mb" style={{ marginBottom: 80 }}>
             <h3 className="h3-d" style={{ marginBottom: 24 }}>Checkbox</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: 18, maxWidth: 420 }}>
               <CheckRow label="Checked" defaultChecked />
@@ -823,7 +823,7 @@ export default function Home() {
           </div>
 
           {/* Form Field */}
-          <div style={{ marginBottom: 80 }}>
+          <div className="nf-block-mb" style={{ marginBottom: 80 }}>
             <h3 className="h3-d" style={{ marginBottom: 24 }}>Form Field</h3>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", gap: 20, maxWidth: 640 }}>
               <div className="form-field">
@@ -851,7 +851,7 @@ export default function Home() {
           </div>
 
           {/* Stat Card */}
-          <div style={{ marginBottom: 80 }}>
+          <div className="nf-block-mb" style={{ marginBottom: 80 }}>
             <h3 className="h3-d" style={{ marginBottom: 24 }}>Stat Card</h3>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))", gap: 16 }}>
               <div className="stat-card">
@@ -873,7 +873,7 @@ export default function Home() {
           </div>
 
           {/* Alert */}
-          <div style={{ marginBottom: 80 }}>
+          <div className="nf-block-mb" style={{ marginBottom: 80 }}>
             <h3 className="h3-d" style={{ marginBottom: 24 }}>Alert</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 560 }}>
               <div className="nf-alert nf-alert-success">
@@ -919,7 +919,7 @@ export default function Home() {
         </section>
 
         {/* ===== Token Map ===== */}
-        <section id="token-map" className="section-sep" style={{ padding: "80px 0 64px" }}>
+        <section id="token-map" className="section-sep nf-section-pad" style={{ padding: "80px 0 64px" }}>
           <div style={{ marginBottom: 48 }}>
             <p className="overline" style={{ marginBottom: 8 }}>Part 03</p>
             <h2 className="h2-d">Token Map</h2>

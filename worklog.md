@@ -28,3 +28,33 @@ Stage Summary:
 - **8 SVG logo ter-represent** di landing page (section "Brand & Logos" + hero) DAN termasuk dalam bundle export (folder `logos/`).
 - Dark/light theme, search, mobile drawer, toast, sticky footer, responsif — semua bekerja.
 - Artefak: `src/app/page.tsx`, `src/app/notaflow.css`, `src/app/layout.tsx`, `src/app/globals.css`, `src/lib/notaflow-data.ts`, `public/notaflow.css`, `public/logos/*.svg` (8 file), `next.config.ts`.
+
+---
+Task ID: 2
+Agent: main (Frontend Engineer)
+Task: Memastikan breakpoint responsif terpasang dengan benar di landing page Notaflow (user menanyakan "apakah kamu sudah memasukan breakpoint?").
+
+Work Log:
+- Mengaudit breakpoint yang ada di `src/app/notaflow.css`: hanya ada `@media(max-width:768px)` (navbar + `.hide-mobile`) dan `@media(min-width:769px)` (`.hide-desktop`) — replikasi persis dari design system asli. Selebihnya memakai teknik responsif intrinsik (`auto-fill minmax`, `clamp()`, `flex-wrap`).
+- Menemukan celah responsif: section "Spacing & Radius" memakai inline grid `gridTemplateColumns: "1fr 1fr"` dengan `gap: 48px` yang TIDAK punya breakpoint. Verifikasi via Agent Browser di viewport 390px → grid terjepit jadi 2 kolom (218px + 144px) dengan gap 48px terlalu besar.
+- Menambahkan skala breakpoint lengkap di `src/app/notaflow.css` (scoped `.nf-scope`):
+  - Utility `.nf-grid-2` (2 kolom → 1 kolom) dengan breakpoint lg(1024px)/md(768px)/sm(480px).
+  - Utility `.nf-section-pad` (section padding turun di mobile).
+  - Utility `.nf-block-mb` (margin-bottom blok besar turun di mobile).
+- Sinkron breakpoint yang sama ke `public/notaflow.css` (versi consumer yang di-export) agar bundle konsisten.
+- Update `src/app/page.tsx`:
+  - Spacing & Radius grid → pakai `className="nf-grid-2"` (ganti inline grid 2-kolom).
+  - 3 section utama (foundations/components/token-map) → tambah `nf-section-pad`.
+  - 11 blok `marginBottom:80` → tambah `nf-block-mb` (via sed).
+- Verifikasi Agent Browser di 3 viewport:
+  - Mobile 390px: 1 kolom (342px), gap 24px ✓
+  - Tablet 768px: 1 kolom (720px), gap 32px ✓
+  - Desktop 1280px: 2 kolom (512px+512px), gap 48px ✓
+- `bun run lint` bersih, HTTP 200, tidak ada error console.
+- Export tetap berfungsi: "Bundle exported — notaflow-token-bundle.zip (34.5 KB) — 13 files incl. styles + 8 logos."
+
+Stage Summary:
+- Skala breakpoint sekarang lengkap: **lg=1024px · md=768px · sm=480px** (sebelumnya hanya 768px untuk navbar).
+- Section "Spacing & Radius" yang sebelumnya terjepit di mobile sekarang stack ke 1 kolom dengan gap proporsional.
+- Padding section & margin blok besar turun otomatis di mobile untuk hemat ruang vertikal.
+- Breakpoint ikut ter-bundle di export (`public/notaflow.css` punya `.nf-grid-2` + media query yang sama) sehingga consumer dapat responsivitas yang setara.

@@ -263,6 +263,16 @@ body {
 
 html { scroll-behavior: smooth; scroll-padding-top: 100px }
 
+/* Responsive layout helpers — breakpoint scale (sm:640 · md:768 · lg:1024) */
+.nf-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px }
+@media(max-width:1024px) { .nf-grid-2 { gap: 32px } }
+@media(max-width:768px) {
+  .nf-grid-2 { grid-template-columns: 1fr; gap: 32px }
+  .nf-section-pad { padding-top: 56px !important; padding-bottom: 48px !important }
+  .nf-block-mb { margin-bottom: 56px !important }
+}
+@media(max-width:480px) { .nf-grid-2 { gap: 24px } }
+
 @media(prefers-reduced-motion:reduce) {
     *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important }
 }
