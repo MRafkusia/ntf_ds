@@ -86,3 +86,33 @@ Stage Summary:
   - 48 komponen shadcn/ui di `src/components/ui/`.
 - **Yang TIDAK ter-push** (di-ignore): `node_modules/`, `.next/` (build output), `dev.log`/`server.log`, `.env`, `upload/` (input user), `download/` (scratch), `skills/`.
 - `.env` dan `upload/` sebelumnya SUDAH ter-commit → sudah di-untrack via `git rm --cached` agar tidak ter-push ulang. Catatan: jika repo sudah pernah di-push ke GitHub sebelumnya, `.env` lama masih ada di history — disarankan `git filter-repo` atau re-create repo untuk benar-benar menghapus dari history.
+
+---
+Task ID: 4
+Agent: main (Frontend Engineer)
+Task: Push ke git remote https://github.com/MRafkusia/ntf_ds.git dan konfigurasi Next.js agar berjalan di GitHub Pages (GitHub Actions).
+
+Work Log:
+- Menghapus `src/app/api/route.ts` — route handlers (API routes) tidak kompatibel dengan `output: 'export'` (static export). Page Notaflow tidak memakainya.
+- Update `next.config.ts`:
+  - `output: 'export'` (ganti `standalone`) → produksi `./out` untuk GitHub Pages.
+  - `basePath` & `assetPrefix` dibaca dari `process.env.NEXT_PUBLIC_BASE_PATH` (kosong di dev agar sandbox preview di `/` tetap jalan; `/ntf_ds` di GitHub Actions).
+  - `images: { unoptimized: true }` (GitHub Pages tidak punya Next.js image optimizer).
+  - `trailingSlash: true` (generate `/route/index.html` untuk clean URL).
+  - `env: { NEXT_PUBLIC_BASE_PATH }` agar client code bisa akses basePath.
+  - Pertahankan `allowedDevOrigins`, `typescript.ignoreBuildErrors`, `reactStrictMode: false`.
+- Update `package.json`: build script dari `next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/` → `next build` (standalone tidak relevan untuk static export).
+- Fix `src/app/page.tsx`: `fetch('/notaflow.css')` → `fetch(\`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/notaflow.css\`)` di 2 tempat (runExport & runDownload) agar export bundle tetap jalan di basePath `/ntf_ds/`.
+- Buat `public/.nojekyll` (file kosong) — cegah Jekyll processing di GitHub Pages yang akan meng-ignore folder `_next/`.
+- Buat `.github/workflows/deploy.yml`: trigger push ke `main` → setup Bun → `bun install --frozen-lockfile` → `bun run build` dengan `NEXT_PUBLIC_BASE_PATH=/ntf_ds` → upload `./out` sebagai Pages artifact → deploy. Permissions: `pages: write`, `id-token: write`.
+- Verifikasi dev server: restart, HTTP 200, lint bersih, 8 logo tile, footer, export tetap berfungsi (34.5 KB, 13 files). `output: 'export'` tidak mempengaruhi `next dev` (build-only setting).
+- Commit: "feat: configure Next.js static export for GitHub Pages + add deploy workflow" (6 files changed).
+- Tambah remote: `git remote add origin https://github.com/MRafkusia/ntf_ds.git`.
+- Attempt push gagal: `fatal: could not read Username for 'https://github.com'` — sandbox TIDAK punya credential GitHub (tidak ada GITHUB_TOKEN, gh CLI, ~/.git-credentials, atau SSH key). Push butuh authentication dari user.
+
+Stage Summary:
+- **Konfigurasi GitHub Pages SELESAI & TER-COMMIT lokal** (branch `main`, 8 commit total).
+- Remote `origin` sudah ditambahkan ke `https://github.com/MRafkusia/ntf_ds.git`.
+- **Push tertunda**: butuh GitHub Personal Access Token (PAT) dari user karena sandbox tidak punya credential. Setelah push berhasil, GitHub Action akan otomatis build & deploy ke `https://Mrafkusia.github.io/ntf_ds/`.
+- Langkah user di GitHub (sekali): Settings → Pages → Source = "GitHub Actions".
+- File yang berubah: `next.config.ts`, `package.json`, `src/app/page.tsx`, hapus `src/app/api/route.ts`, baru `public/.nojekyll`, baru `.github/workflows/deploy.yml`.
